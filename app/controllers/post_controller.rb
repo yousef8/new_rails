@@ -19,4 +19,18 @@ class PostController < ApplicationController
       render :new, status: 422
     end
   end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+
+    if @post.update({title: params[:post][:title], content: params[:post][:content]})
+      redirect_to posts_url
+    else
+      render :edit, status: 422
+    end
+  end
 end

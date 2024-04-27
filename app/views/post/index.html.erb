@@ -2,14 +2,15 @@
 <h1 style="text-align: center">Posts</h1>
 <h3><%= link_to "+ Post", new_post_path%></h3>
 </div>
-<div class="container-lg mt-4 d-flex flex-row justify-content-around">
+<div class="container-lg mt-4 d-flex flex-row justify-content-around flex-wrap">
 <% @posts.each do |post| %>
 
-<div class="card" style="width: 18rem;">
+<div class="card mt-3 mb-3" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title"><%= post.title%></h5>
     <p class="card-text"><%= post.content%></p>
     <%= link_to "show", post_path(post)%>
+    <%= link_to "edit", edit_post_path(post)%>
   </div>
 </div>
 <%end%>
