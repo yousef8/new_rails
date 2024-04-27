@@ -5,5 +5,5 @@
 <h1>Content: <%= @author.phone_number%></h1>
 <h1>Create_at: <%= @author.created_at%></h1>
 <h3><%= link_to "<= Authors", authors_path%></h3>
-<%# <h3><%= link_to "Edit", edit_post_path(@post)%></h3>
+<h3><%= link_to "Edit", edit_author_path(@author)%></h3>
 <%# <h3><%= link_to "Delete", post_path(@post), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
